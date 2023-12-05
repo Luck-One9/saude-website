@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export const getData = async () => {
+const getData = async () => {
   const res = await fetch("http://localhost:1337/api/articles?populate=*");
   const articles = await res.json().then((data) => data.data);
 
@@ -23,7 +23,7 @@ interface Article {
 }
 
 
-const Page = async () => {
+async function Page(){
     // Minimising the paragrahps on the card component
     const MAX_LENGTH = 250;
     const data = await getData()
