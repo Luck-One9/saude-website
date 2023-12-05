@@ -9,13 +9,21 @@ export default function Sidebar(){
         "3. Conclusão"
     ];
 
-    const [sidebarState, setSidebarState] = useState(localStorage.getItem('sidebarState'));
+    const state = () => {
+        if (typeof window !== 'undefined') {
+            return localStorage.getItem('sidebarState')
+        }
+    }
+
+    const [sidebarState, setSidebarState] = useState(state);
 
     useEffect(() => {
         const checkLocalStorage = () => {
-            const storedSidebarState = localStorage.getItem('sidebarState');
-            if (storedSidebarState !== sidebarState) {
-                setSidebarState(storedSidebarState);
+            if (typeof window !== 'undefined') {
+                const storedSidebarState = localStorage.getItem('sidebarState');
+                if (storedSidebarState !== sidebarState) {
+                    setSidebarState(storedSidebarState);
+                }
             }
         };
 

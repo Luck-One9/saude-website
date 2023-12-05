@@ -7,12 +7,14 @@ export default function RootHTML({
     children: React.ReactNode
   }){
     var themeStored = () => {
-        let theme = localStorage.getItem('theme');
-        if(theme){
-            return theme;
-        }else{
-            localStorage.setItem('theme', 'light');
-            return 'light';
+        if (typeof window !== 'undefined') {
+            let theme = localStorage.getItem('theme');
+            if(theme){
+                return theme;
+            }else{
+                localStorage.setItem('theme', 'light');
+                return 'light';
+            }
         }
     };
     const [ theme, setTheme ] = useState(themeStored);

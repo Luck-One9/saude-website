@@ -3,27 +3,33 @@ import { useState } from "react";
 
 export default function Navbar(){
     var themeStored = () => {
-        let theme = localStorage.getItem('theme');
-        if(theme){
-            return theme;
-        }else{
-            localStorage.setItem('theme', 'light');
-            return 'light';
+        if (typeof window !== 'undefined') {
+            let theme = localStorage.getItem('theme');
+            if(theme){
+                return theme;
+            }else{
+                localStorage.setItem('theme', 'light');
+                return 'light';
+            }
         }
     };
     const [ theme, setTheme ] = useState(themeStored);
 
     const changeTheme = () => {
-        setTheme(theme == 'dark' ? 'light': 'dark');
-        let html = document.getElementsByTagName('html');
-        html.item(0)?.classList.toggle('dark');
-        localStorage.setItem('theme', (theme == 'dark' ? 'light': 'dark'));
+        if (typeof window !== 'undefined') {
+            setTheme(theme == 'dark' ? 'light': 'dark');
+            let html = document.getElementsByTagName('html');
+            html.item(0)?.classList.toggle('dark');
+            localStorage.setItem('theme', (theme == 'dark' ? 'light': 'dark'));
+        }
     };
 
 
     const toggleSidebar = () => {
-        let sidebarState = localStorage.getItem('sidebarState');
-        localStorage.setItem('sidebarState', (!sidebarState || sidebarState == 'show' ? 'hidden' : 'show'));
+        if (typeof window !== 'undefined') {
+            let sidebarState = localStorage.getItem('sidebarState');
+            localStorage.setItem('sidebarState', (!sidebarState || sidebarState == 'show' ? 'hidden' : 'show'));
+        }
     };
 
     return (
