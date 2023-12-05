@@ -13,7 +13,7 @@ export default function Sidebar(){
         if (typeof window !== 'undefined') {
             return localStorage.getItem('sidebarState')
         }
-    }
+    };
 
     const [sidebarState, setSidebarState] = useState(state);
 
