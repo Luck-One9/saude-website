@@ -5,19 +5,20 @@ import Navbar from "@/components/navbar";
 import Sidebar from "@/components/sidebar";
 
 export default async function TestePage({ params }: { params: { id: number } }){
-    const file = await fs.readFile(process.cwd() + `/articles/${params.id}.json`, 'utf8');
-    const data = JSON.parse(file);
+    // const file = await fs.readFile(process.cwd() + `/articles/${params.id}.json`, 'utf8');
+    // const data = JSON.parse(file);
 
     return (
         <>
             <Navbar />
             <div className="flex">
                 <Sidebar />
-                <BlogSection 
+                <h2>{params.id}</h2>
+                {/* <BlogSection 
                     title={data.title}
                     desc={data.description}
                     body={data.body}
-                />
+                /> */}
             </div>
         </>
     )
