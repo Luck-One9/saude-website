@@ -29,9 +29,9 @@ export default function Sidebar(){
     return (
         <div className={"sticky "+sidebarState+" w-3/4 md:w-1/4 pl-9 pt-6 h-screen bg-gray-100 border-r-2 border-gray-200 dark:bg-gray-700 dark:text-white dark:border-b dark:border-gray-600"}>
             <div>
-                {articlesList?.map(title => {
+                {articlesList?.map((title, index) => {
                     return (
-                        <div className="py-2 cursor-pointer transform-gpu hover:text-blue-600 dark:hover:text-sky-400 hover:translate-x-1">
+                        <div key={index} className="py-2 cursor-pointer transform-gpu hover:text-blue-600 dark:hover:text-sky-400 hover:translate-x-1">
                             <h2>{title}</h2>
                         </div>
                     )
