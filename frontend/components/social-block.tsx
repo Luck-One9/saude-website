@@ -10,32 +10,32 @@ export default function SocialBlock(){
     const path = usePathname();
 
     const atualizarMetadatas = async () => {
-        const novasMetadatas = {
-            amei: love,
-            gostei: like,
-            'nao-gostei': dislike,
-        };
+        // const novasMetadatas = {
+        //     amei: love,
+        //     gostei: like,
+        //     'nao-gostei': dislike,
+        // };
 
-        try {
-          const response = await fetch(`/api`, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              metadata: novasMetadatas,
-              fileName: path.split('/')[2],
-            }),
-          });
+        // try {
+        //   const response = await fetch(`/api`, {
+        //     method: 'POST',
+        //     headers: {
+        //       'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify({
+        //       metadata: novasMetadatas,
+        //       fileName: path.split('/')[2],
+        //     }),
+        //   });
     
-            if (response.ok) {
-                console.log('Metadatas atualizadas com sucesso.');
-            } else {
-                console.error('Erro ao atualizar as metadatas:', response.statusText);
-            }
-        } catch (error) {
-          console.error('Erro ao atualizar as metadatas:', error);
-        }
+        //     if (response.ok) {
+        //         console.log('Metadatas atualizadas com sucesso.');
+        //     } else {
+        //         console.error('Erro ao atualizar as metadatas:', response.statusText);
+        //     }
+        // } catch (error) {
+        //   console.error('Erro ao atualizar as metadatas:', error);
+        // }
     };
 
 
