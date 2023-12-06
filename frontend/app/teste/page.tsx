@@ -10,15 +10,18 @@ export default function TestePage(){
     return (
         <>
                 {articles?.map(({
+                    _id,
                     title,
                     description,
                     body
                 }: {
+                    _id:string,
                     title:string,
                     description:string,
                     body:string
                 }) => (
-                    <BlogSection 
+                    <BlogSection
+                        key={_id}
                         title={title}
                         desc={description}
                         body={body}
