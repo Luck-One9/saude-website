@@ -8,15 +8,18 @@ export default function TestePage({ params }: { params: { id: string } }){
     return (
         <>
             {articles?.map(({
+                    _id,
                     title,
                     description,
                     body
                 }: {
+                    _id:string
                     title:string,
                     description:string,
                     body:string
                 }) => (
                     <BlogSection 
+                        key={_id}
                         title={title}
                         desc={description}
                         body={body}
