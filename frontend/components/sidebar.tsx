@@ -5,8 +5,14 @@ import { useEffect, useState } from "react";
 export default function Sidebar(){
     var articlesList = [
         "1. Introdução",
-        "2. Desenvolvimento",
-        "3. Conclusão"
+        "2. Saúde Digital",
+        "3. Exercícios e bem-estar",
+        "4. O sono e a Tecnologia",
+        "5. Saúde Mental",
+        "6. Conectividade Social",
+        "7. Vício em tecnologia",
+        "8. Uso Consciente",
+        "9. Conclusão"
     ];
 
     const state = () => {
@@ -39,7 +45,7 @@ export default function Sidebar(){
             <div>
                 {articlesList?.map((title, index) => {
                     return (
-                        <div key={index} className="py-2 cursor-pointer transform-gpu hover:text-blue-600 dark:hover:text-sky-400 hover:translate-x-1">
+                        <div key={index} className="py-3 cursor-pointer transform-gpu hover:text-blue-600 dark:hover:text-sky-400 hover:translate-x-1">
                             <h2>{title}</h2>
                         </div>
                     )

@@ -14,9 +14,9 @@ export default function BlogSection({
             <div className="w-3/5 mr-52 space-y-4 mb-32">
                 <h1 className="font-bold text-2xl font-serif mx-4">{title}</h1>
                 <p className="pb-4 text-lg italic font-serif">{desc}</p>
-                <div className="ml-5/12 break-words font-serif text-left text-base/7 indent-8 dark:text-[#A7A6A6]" dangerouslySetInnerHTML={{__html: body.toString()}} />
+                <div className="ml-5/12 break-words font-serif text-left text-base/7 indent-8 dark:text-[#A7A6A6]" dangerouslySetInnerHTML={{__html: body?.toString()}} />
             </div>
-                <SocialBlock />
+                {/* <SocialBlock /> */}
         </div>
     );
 }
