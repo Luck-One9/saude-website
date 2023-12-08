@@ -1,6 +1,5 @@
 'use client';
 import { useEffect, useState } from "react";
-import Typist from 'react-typist';
 
 export default function Navbar(){
     const [ theme, setTheme ] = useState('light');
