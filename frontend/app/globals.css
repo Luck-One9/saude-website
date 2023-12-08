@@ -5,3 +5,20 @@
 html, body {
     overflow: hidden;
 }
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #999;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 5px;
+}

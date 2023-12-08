@@ -1,16 +1,30 @@
-import Link from 'next/link'
+"use client";
+import { useQuery } from "convex/react";
+import { api } from "@/convex/_generated/api";
+import { useEffect } from "react";
+import BlogSection from "@/components/blog-section";
 
-async function Page(){
-    // Minimising the paragrahps on the card component
-    return (
-     <>
-          <section className="w-full px-4 py-24 mx-auto max-w-7xl md:w-4/5">
-               <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
-                <h1>Olá</h1>
-               </div>
-         </section>     
-     </>
-     )
+export default function Page(){
+     const articles = useQuery(api.articles.get, {
+          id: 'introduction'
+      });
+  
+     useEffect(() => {
+          if (articles && articles.length > 0) {
+            // Alterar o título da página para o título do primeiro artigo
+            document.title = articles[0].title + " | TechLife";
+          }
+      }, [articles]);
+      
+      return (
+          <>
+              {articles?.map((article:any) => (
+                      <BlogSection 
+                          key={article._id}
+                          article={article}
+                      />
+              ))}
+  
+          </>
+      )
 }
- 
-export default Page;
