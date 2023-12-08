@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ConvexClientProvider>
         <Navbar />
-            <div className="flex">
+            <div className="flex dark:bg-gray-800">
                 <Sidebar />
                 {children}
             </div>
